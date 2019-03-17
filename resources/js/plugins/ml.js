@@ -1,0 +1,75 @@
+import Vue from 'vue'
+import { MLInstaller, MLCreate, MLanguage } from 'vue-multilanguage'
+
+Vue.use(MLInstaller);
+
+export default new MLCreate({
+    initial: localStorage.getItem('lang') || 'ru',
+    save: process.env.NODE_ENV === 'production',
+    languages: [
+        new MLanguage('en').create({
+            login: 'Login',
+            registration: 'Registration',
+            forgot: 'Forgot Password',
+            email: 'Email',
+            password: 'Password',
+            confirm: 'Password Confirm',
+            question: 'Secret Question',
+            answer: 'Answer',
+            send: 'Send',
+            reset: 'Reset',
+            change: 'Change',
+            signIn: 'Sign In',
+            changePassword: 'Change Password',
+            personal: 'Personal',
+            logout: 'Logout',
+            currentPassword: 'Current Password',
+            newPassword: 'New Password',
+            newConfirm: 'Confirm new Password',
+            msgResetLink: 'Thank You! Please check your email to reset your password.',
+            register: 'Register',
+            msgVerify: 'Thank You! Please check your email to activate your account',
+            errLogin: 'There was an error, unable to sign in with those credentials.',
+            errLoginMsg: 'Login cannot contain upper case letters and special characters. The minimum length is 6 characters, the maximum length is 32 characters. ',
+            loginAvailability: 'Login is available for registration',
+            emailAvailability: 'Email is available for registration',
+            msgSuccessReset: 'Thank you! Password changed!',
+            wrongPassword: 'Incorrect password!',
+            wrongAnswer: 'Incorrect answer!',
+            captchaFailed: 'You have not passed validation of Google reCaptcha! Please contact the Administrator!',
+
+        }),
+
+        new MLanguage('ru').create({
+            login: 'Логин',
+            registration: 'Регистрация',
+            forgot: 'Забыли пароль?',
+            email: 'Email',
+            password: 'Пароль',
+            confirm: 'Подтвердите пароль',
+            question: 'Секретный вопрос',
+            answer: 'Ответ',
+            send: 'Отправить',
+            reset: 'Сбросить',
+            change: 'Изменить',
+            signIn: 'Войти',
+            changePassword: 'Сменить пароль',
+            personal: 'Личная страница',
+            logout: 'Выйти',
+            currentPassword: 'Текущий пароль',
+            newPassword: 'Новый пароль',
+            newConfirm: 'Подтвердите новый пароль',
+            msgResetLink: 'Спасибо! Пожалуйста проверьте вашу почту, для того что бы сбросить пароль.',
+            register: 'Зарегистрироваться',
+            msgVerify: 'Спасибо! Пожалуйста проверьте вашу почту для активации аккаунта',
+            errLogin: 'Произошла ошибка. Не удалось войти с этими учетными данными.',
+            errLoginMsg: 'Логин не может содержать букв верхнего регистра и спецсимволов. Минимальная длина - 6 символов, максимальная длина - 32 символа.',
+            loginAvailability: 'Логин доступен для регистрации',
+            emailAvailability: 'Email доступен для регистрации',
+            msgSuccessReset: 'Спасибо! Пароль изменен!',
+            wrongPassword: 'Не правильный пароль!',
+            wrongAnswer: 'Не правильный ответ!',
+            captchaFailed: 'Вы не прошли валидацию Google reCaptcha! Пожалуйста, обратитесь к Администратору!',
+        })
+    ]
+})
